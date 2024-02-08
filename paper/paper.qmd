@@ -50,7 +50,7 @@ tibble(year = 1875:1972,
   geom_point()
 ```
 
-
+We are interested in the height of black cherry trees (@fig-treeheight).
 
 ```{r}
 #| label: fig-treeheight
@@ -66,6 +66,25 @@ datasets::trees |>
 
 
 ```
+
+
+We are interested in making the penguins graph look bad. (@fig-penguinsbad)
+
+```{r}
+#| label: fig-penguinsbad
+#| fig-cap: Flipper length and body mass for Adelie, Chinstrap and Gentoo Penguins.
+#| echo: false
+#| warning: false
+
+ggplot(data = penguins,
+       aes(x = flipper_length_mm,
+           y = body_mass_g)) +
+  geom_point(size = 100)
+
+
+
+```
+
 
 ```{r}
 #| label: fig-bills
