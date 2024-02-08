@@ -100,6 +100,24 @@ ggplot(penguins, aes(x = island, fill = species)) +
   coord_flip()
 ```
 
+This is a table of the average speed of light experiments @averagelightspeed
+
+```{r}
+#| label: tbl-averagelightspeed
+#| tbl-cap: "Michelson data estimating the speed of light (km/sec, with 299000 subtracted), based on five experiemnts in 1879 on the speed of light, averaged over 20 runs" 
+#| echo: false
+
+datasets::morley |> 
+  tibble() |>
+  group_by(Expt) |>
+  summarise(average = mean(Speed)) |>
+  knitr::kable(
+    col.names = c("Experiment Number", "Average Measurement (km/s)"),
+    digits = 0
+  ) 
+  
+```
+
 Talk more about it.
 
 And also planes (@fig-planes). (You can change the height and width, but don't worry about doing that until you have finished every other aspect of the paper - Quarto will try to make it look nice and the defaults usually work well once you have enough text.)
